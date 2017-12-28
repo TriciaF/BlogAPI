@@ -2,6 +2,7 @@
 
 const uuid = require('uuid');
 
+
 // This module provides volatile storage, using a `BlogPost`
 // model. We haven't learned about databases yet, so for now
 // we're using in-memory storage. This means each time the app stops, our storage
@@ -19,6 +20,7 @@ function StorageException(message) {
 
 const BlogPosts = {
   create: function(title, content, author, publishDate) {
+    console.log('enger BlogPosts:create');
     const post = {
       id: uuid.v4(),
       title: title,
@@ -69,4 +71,4 @@ function createBlogPostsModel() {
 }
 
 
-// module.exports = { BlogPosts: createBlogPostsModel() };
+module.exports = { BlogPosts: createBlogPostsModel() };
